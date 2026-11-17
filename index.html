@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Ramro Fitness | Malabe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#111113;--card:#1a1a1d;--edge:#2c2c31;--red:#e3262f;--red-d:#b81b23;--white:#f5f5f3;--muted:#9b9ba3;--wa:#1faa52}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--white);font-family:'Work Sans',system-ui,sans-serif;font-size:16px;line-height:1.55;overflow-x:hidden}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;text-transform:uppercase;margin:0;line-height:.92;letter-spacing:.01em}
+  .wrap{width:min(1120px,92vw);margin:0 auto}
+  .tag{display:inline-block;background:var(--red);color:#fff;font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .6rem;transform:skewX(-12deg)}
+  .tag span{display:inline-block;transform:skewX(12deg)}
+  .btn{display:inline-block;font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:.8rem 1.5rem;border:2px solid transparent;cursor:pointer}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-d)}
+  .btn-out{border-color:var(--white);color:var(--white);background:transparent}
+  .btn-out:hover{background:var(--white);color:var(--bg)}
+
+  .demo-banner{background:#2a0a0c;color:#f3c7ca;font-size:.78rem;text-align:center;padding:.5rem 1rem}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(17,17,19,.96);border-bottom:1px solid var(--edge)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+  .brand img{width:44px;height:44px;border-radius:50%}
+  .brand b{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:1.6rem;letter-spacing:.04em}
+  .brand b i{font-style:normal;color:var(--red)}
+  nav{display:flex;gap:1.6rem;align-items:center}
+  nav a{text-decoration:none;font-weight:500;font-size:.93rem}
+  nav a:hover{color:var(--red)}
+  .menu-btn{display:none;background:none;border:1px solid var(--edge);color:var(--white);padding:.4rem .8rem;font-family:inherit;font-weight:700;cursor:pointer}
+
+  /* hero with slanted red block */
+  .hero{position:relative;overflow:hidden;padding:4.4rem 0 4rem;border-bottom:1px solid var(--edge)}
+  .hero::before{content:"";position:absolute;top:0;bottom:0;right:-12%;width:44%;background:var(--red);transform:skewX(-14deg);z-index:0}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:2.4rem;align-items:center}
+  .hero h1{font-size:clamp(3.6rem,10vw,7.6rem);margin:1rem 0 1.2rem}
+  .hero h1 .r{color:var(--red)}
+  .hero p{color:#c9c9cf;max-width:470px;margin:0 0 1.8rem;font-size:1.06rem}
+  .hero .btns{display:flex;gap:.8rem;flex-wrap:wrap}
+  .weigh{background:var(--white);color:var(--bg);padding:1.6rem;box-shadow:14px 14px 0 rgba(0,0,0,.35);max-width:360px;justify-self:end;width:100%}
+  .weigh .top{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#55555c}
+  .weigh .big{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:4.2rem;line-height:1;margin:.6rem 0 .2rem}
+  .weigh .big small{font-size:1.6rem}
+  .weigh .delta{color:var(--red-d);font-weight:700}
+  .weigh ol{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.45rem;border-top:2px solid var(--bg);padding-top:.9rem}
+  .weigh li{display:flex;justify-content:space-between;font-size:.92rem}
+  .weigh li b{font-family:'Big Shoulders Display',sans-serif;font-size:1.15rem}
+  .weigh .note{font-size:.72rem;color:#77777e;margin-top:.8rem}
+
+  section{padding:4.8rem 0;border-bottom:1px solid var(--edge)}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:2.2rem}
+  .head h2{font-size:clamp(2.6rem,6vw,4.4rem);margin-top:.8rem}
+  .head p{color:var(--muted);margin:0;max-width:380px}
+
+  /* planner */
+  .planner{display:grid;grid-template-columns:.9fr 1.1fr;gap:1.4rem;align-items:start}
+  .q{background:var(--card);border:1px solid var(--edge);padding:1.6rem}
+  .q fieldset{border:0;padding:0;margin:0 0 1.4rem}
+  .q legend{font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.6rem}
+  .opts{display:flex;flex-wrap:wrap;gap:.45rem}
+  .opts label{cursor:pointer}
+  .opts input{position:absolute;opacity:0;pointer-events:none}
+  .opts span{display:inline-block;border:1px solid var(--edge);padding:.55rem .9rem;font-weight:500;font-size:.92rem;background:#141416}
+  .opts input:checked + span{background:var(--red);border-color:var(--red);color:#fff}
+  .opts input:focus-visible + span{outline:2px solid var(--white);outline-offset:2px}
+  .field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+  .field label{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .field input{font:inherit;padding:.7rem .8rem;background:#0d0d0f;border:1px solid var(--edge);color:var(--white)}
+  .field input:focus{outline:2px solid var(--red);outline-offset:1px}
+  .send{width:100%;background:var(--wa);border:0;color:#fff;padding:.95rem;font-weight:700;font-family:inherit;font-size:.98rem;cursor:pointer}
+  .send:hover{background:#178a42}
+  .sent{display:none;margin-top:.8rem;font-size:.9rem;color:var(--muted);text-align:center}
+  .sent.show{display:block}
+  .sent a{color:#fff;font-weight:700}
+
+  .plan{background:var(--white);color:var(--bg);padding:1.8rem}
+  .plan h3{font-size:2.4rem}
+  .plan .sub{margin:.3rem 0 1.2rem;color:#55555c}
+  .week{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+  .day{border:2px solid var(--bg);padding:.55rem .35rem;min-height:92px;display:flex;flex-direction:column;gap:.3rem}
+  .day b{font-family:'Big Shoulders Display',sans-serif;font-size:1.05rem}
+  .day span{font-size:.72rem;line-height:1.25}
+  .day.on{background:var(--red);border-color:var(--red);color:#fff}
+  .day.rest{color:#8a8a90;border-style:dashed}
+  .plan ul{margin:1.2rem 0 0;padding-left:1.1rem;font-size:.92rem}
+  .plan .fine{font-size:.76rem;color:#77777e;margin:1rem 0 0}
+
+  /* trainers / PT */
+  .pt{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:center}
+  .pt-photo{aspect-ratio:4/5;background:#202024 center/cover no-repeat;border-left:8px solid var(--red);position:relative}
+  .pt-photo.has-img{background-image:var(--img)}
+  .pt-photo span{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.7);font-size:.74rem;padding:.2rem .55rem}
+  .pt-photo.has-img span{display:none}
+  .steps{list-style:none;margin:1.6rem 0 0;padding:0;counter-reset:s}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--edge)}
+  .steps li::before{content:counter(s,decimal-leading-zero);font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:2.2rem;color:var(--red);line-height:1}
+  .steps b{display:block;font-size:1.05rem}
+  .steps p{margin:.2rem 0 0;color:var(--muted);font-size:.92rem}
+
+  /* supplements */
+  .shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .tub{background:var(--card);border:1px solid var(--edge);padding:1.4rem 1.2rem;display:flex;flex-direction:column;gap:.5rem}
+  .tub svg{width:48px;height:60px}
+  .tub h3{font-size:1.7rem}
+  .tub p{margin:0;color:var(--muted);font-size:.9rem;flex:1}
+  .tub button{background:none;border:1px solid var(--red);color:#fff;padding:.55rem;font-family:inherit;font-weight:700;cursor:pointer;font-size:.88rem;margin-top:.4rem}
+  .tub button:hover{background:var(--red)}
+
+  /* offer strip */
+  .offer{background:var(--red);padding:2.4rem 0;border-bottom:0}
+  .offer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;flex-wrap:wrap}
+  .offer h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+  .offer p{margin:.4rem 0 0;color:#ffe1e2}
+  .offer .btn-out:hover{color:var(--red)}
+
+  /* visit */
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+  .box{background:var(--card);border:1px solid var(--edge);padding:1.8rem}
+  .box dl{margin:0;display:grid;gap:1rem}
+  .box dt{font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+  .box dd{margin:.15rem 0 0}
+  .box a{font-weight:700}
+
+  footer{padding:2rem 0;color:var(--muted);font-size:.86rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+  .float-wa{position:fixed;right:14px;bottom:14px;z-index:19;background:var(--wa);color:#fff;text-decoration:none;font-weight:700;padding:.75rem 1.1rem;font-size:.9rem}
+
+  @media (max-width:920px){
+    .hero .wrap,.planner,.pt,.visit{grid-template-columns:1fr}
+    .hero::before{width:70%;right:-40%;opacity:.9}
+    .weigh{justify-self:start}
+    .shelf{grid-template-columns:1fr 1fr}
+    nav{display:none}
+    nav.open{display:flex;flex-direction:column;align-items:flex-start;position:absolute;top:68px;left:0;right:0;background:var(--bg);padding:1rem 4vw 1.3rem;border-bottom:1px solid var(--edge)}
+    .menu-btn{display:block}
+  }
+  @media (max-width:560px){
+    section{padding:3.6rem 0}
+    .hero::before{display:none}
+    .week{grid-template-columns:repeat(4,1fr)}
+    .shelf{grid-template-columns:1fr}
+    .q,.plan{padding:1.3rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-banner">DEMO by Code.lowa for Ramro Fitness. Sample plans, products and weigh-in numbers. Remove this bar after approval.</div>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.png" alt="Ramro Fitness logo"><b>RAMRO <i>FITNESS</i></b></a>
+    <nav id="nav">
+      <a href="#planner">Plan</a>
+      <a href="#pt">Personal training</a>
+      <a href="#supplements">Supplements</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="tag"><span>Malabe gym</span></span>
+        <h1>Achieve more.<br><span class="r">Become Ramro.</span></h1>
+        <p>Personal training, regular weigh-ins and supplements under one roof. Tell us your goal and we'll show you how your first week could look.</p>
+        <div class="btns">
+          <a class="btn btn-red" href="#planner">Plan my first week</a>
+          <a class="btn btn-out" href="#visit">Visit the gym</a>
+        </div>
+      </div>
+      <div class="weigh" aria-label="Example weigh-in progress card">
+        <div class="top"><span>Weigh-in card</span><span>Member #000</span></div>
+        <div class="big">-6.4<small> kg</small></div>
+        <div class="delta">in 12 weeks (example)</div>
+        <ol>
+          <li><span>Week 0</span><b>88.0 kg</b></li>
+          <li><span>Week 4</span><b>85.6 kg</b></li>
+          <li><span>Week 8</span><b>83.1 kg</b></li>
+          <li><span>Week 12</span><b>81.6 kg</b></li>
+        </ol>
+        <div class="note">Sample numbers. Replace with a real member's progress, with permission.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANNER -->
+  <section id="planner">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="tag"><span>Goal planner</span></span>
+          <h2>Your first Ramro week</h2>
+        </div>
+        <p>Pick a goal and how often you can train. You'll see a sample week, then send it to a Ramro coach on WhatsApp.</p>
+      </div>
+      <div class="planner">
+        <form class="q" id="planForm">
+          <fieldset>
+            <legend>Goal</legend>
+            <div class="opts">
+              <label><input type="radio" name="goal" value="Lose weight" checked><span>Lose weight</span></label>
+              <label><input type="radio" name="goal" value="Build muscle"><span>Build muscle</span></label>
+              <label><input type="radio" name="goal" value="Get stronger"><span>Get stronger</span></label>
+              <label><input type="radio" name="goal" value="General fitness"><span>General fitness</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Days per week</legend>
+            <div class="opts">
+              <label><input type="radio" name="days" value="3" checked><span>3 days</span></label>
+              <label><input type="radio" name="days" value="4"><span>4 days</span></label>
+              <label><input type="radio" name="days" value="5"><span>5 days</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Experience</legend>
+            <div class="opts">
+              <label><input type="radio" name="exp" value="Beginner" checked><span>Beginner</span></label>
+              <label><input type="radio" name="exp" value="Some experience"><span>Some experience</span></label>
+              <label><input type="radio" name="exp" value="Experienced"><span>Experienced</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Preferred time</legend>
+            <div class="opts">
+              <label><input type="radio" name="time" value="Morning" checked><span>Morning</span></label>
+              <label><input type="radio" name="time" value="Evening"><span>Evening</span></label>
+            </div>
+          </fieldset>
+          <div class="field"><label for="pName">Your name</label><input id="pName" autocomplete="name" placeholder="Name"></div>
+          <button class="send" type="submit">Send my plan to a coach</button>
+          <div class="sent" id="sent"></div>
+        </form>
+
+        <div class="plan" aria-live="polite">
+          <h3 id="planTitle">Lose weight</h3>
+          <p class="sub" id="planSub"></p>
+          <div class="week" id="week"></div>
+          <ul id="tips"></ul>
+          <p class="fine">A sample to start the conversation. Your coach adjusts the plan after meeting you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL TRAINING -->
+  <section id="pt">
+    <div class="wrap pt">
+      <div class="pt-photo" data-img="pt.jpg"><span>pt.jpg &middot; personal training photo</span></div>
+      <div>
+        <span class="tag"><span>Personal training</span></span>
+        <h2 style="font-size:clamp(2.6rem,6vw,4.2rem);margin-top:.8rem">A coach in your corner</h2>
+        <p style="color:var(--muted);margin:.8rem 0 0;max-width:460px">One-to-one sessions with a trainer who corrects your form and keeps you on track.</p>
+        <ol class="steps">
+          <li><div><b>Meet and assess</b><p>Your goal, starting weight and training history.</p></div></li>
+          <li><div><b>Train with a plan</b><p>Sessions set around your days and your level.</p></div></li>
+          <li><div><b>Weigh in and adjust</b><p>Regular check-ins so progress is measured, not guessed.</p></div></li>
+        </ol>
+        <a class="btn btn-red" href="#planner" style="margin-top:1.6rem">Ask about personal training</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPLEMENTS -->
+  <section id="supplements">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="tag"><span>Supplements</span></span>
+          <h2>Fuel from the front desk</h2>
+        </div>
+        <p>Sample categories. Add the brands and flavours you stock, and prices if you want to show them.</p>
+      </div>
+      <div class="shelf">
+        <div class="tub"><svg viewBox="0 0 48 60" fill="none" stroke="#e3262f" stroke-width="3"><rect x="6" y="4" width="36" height="9" rx="2"/><rect x="4" y="13" width="40" height="44" rx="4"/><path d="M12 30h24M12 38h16"/></svg><h3>Whey protein</h3><p>For recovery and muscle building after training.</p><button type="button" data-ask="whey protein">Ask stock</button></div>
+        <div class="tub"><svg viewBox="0 0 48 60" fill="none" stroke="#e3262f" stroke-width="3"><rect x="10" y="4" width="28" height="9" rx="2"/><rect x="8" y="13" width="32" height="44" rx="4"/><path d="M15 30h18M15 38h12"/></svg><h3>Creatine</h3><p>For strength and power in heavy sessions.</p><button type="button" data-ask="creatine">Ask stock</button></div>
+        <div class="tub"><svg viewBox="0 0 48 60" fill="none" stroke="#e3262f" stroke-width="3"><rect x="8" y="4" width="32" height="9" rx="2"/><rect x="6" y="13" width="36" height="44" rx="4"/><path d="M24 22l-6 12h7l-3 12"/></svg><h3>Pre-workout</h3><p>For energy and focus before you train.</p><button type="button" data-ask="pre-workout">Ask stock</button></div>
+        <div class="tub"><svg viewBox="0 0 48 60" fill="none" stroke="#e3262f" stroke-width="3"><rect x="4" y="4" width="40" height="9" rx="2"/><rect x="2" y="13" width="44" height="44" rx="4"/><path d="M10 30h28M10 38h20"/></svg><h3>Mass gainer</h3><p>For members working to gain healthy weight.</p><button type="button" data-ask="mass gainer">Ask stock</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="offer">
+    <div class="wrap">
+      <div>
+        <h2>Annual membership offers</h2>
+        <p>Seasonal deals like the 11.11 offer are announced on Instagram. Ask what's running now.</p>
+      </div>
+      <a class="btn btn-out" href="#" id="offerBtn">Ask about offers</a>
+    </div>
+  </section>
+
+  <!-- VISIT -->
+  <section id="visit" style="border-bottom:0">
+    <div class="wrap">
+      <div class="head"><div><span class="tag"><span>Visit</span></span><h2>Come train with us</h2></div></div>
+      <div class="visit">
+        <div class="box">
+          <dl>
+            <div><dt>Location</dt><dd>[Add full address], Malabe</dd></div>
+            <div><dt>Join now</dt><dd><a href="tel:+94741668427">074 166 8427</a></dd></div>
+            <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/ramro_fitness" target="_blank" rel="noopener">@ramro_fitness</a></dd></div>
+            <div><dt>Hours</dt><dd>[Add opening hours]</dd></div>
+          </dl>
+        </div>
+        <div class="box" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1rem">
+          <dt style="font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)">Map</dt>
+          <p style="margin:0;color:var(--muted)">Your Google Maps pin goes here.</p>
+          <a class="btn btn-out" href="https://www.google.com/maps/search/?api=1&amp;query=Ramro+Fitness+Malabe" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; Ramro Fitness &middot; Malabe</span>
+    <span>Achieve more. Become Ramro.</span>
+  </div>
+</footer>
+
+<a class="float-wa" id="floatWa" href="https://wa.me/94741668427" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+var WA = '94741668427';
+var $ = function(id){ return document.getElementById(id); };
+
+/* ---- Photo slots ---- */
+document.querySelectorAll('[data-img]').forEach(function(el){
+  var src = 'img/' + el.getAttribute('data-img');
+  var p = new Image();
+  p.onload = function(){ el.style.setProperty('--img','url("'+src+'")'); el.classList.add('has-img'); };
+  p.src = src;
+});
+
+/* ---- Goal planner (sample splits) ---- */
+var SPLITS = {
+  'Lose weight': {
+    sub:'Strength to hold muscle, cardio to burn more.',
+    sessions:['Full body + cardio','Cardio intervals','Full body + cardio','Cardio + core','Full body circuit'],
+    tips:['Weigh in every two weeks','Walk on rest days','Ask your coach about a simple meal plan']
+  },
+  'Build muscle': {
+    sub:'Train each muscle group with enough rest to grow.',
+    sessions:['Chest & triceps','Back & biceps','Legs','Shoulders & arms','Full body'],
+    tips:['Add a little weight each week','Eat enough protein','Sleep 7 to 8 hours']
+  },
+  'Get stronger': {
+    sub:'Heavy compound lifts with good form.',
+    sessions:['Squat focus','Bench press focus','Deadlift focus','Overhead press','Accessory work'],
+    tips:['Log every lift','Warm up properly','Lift with a spotter on heavy days']
+  },
+  'General fitness': {
+    sub:'A balanced mix to feel fitter every week.',
+    sessions:['Full body','Cardio & mobility','Full body','Core & cardio','Fun circuit'],
+    tips:['Stay consistent before going heavy','Stretch after every session','Try a class or partner workout']
+  }
+};
+var PATTERN = { 3:[0,2,4], 4:[0,1,3,4], 5:[0,1,2,4,5] };
+var DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+function val(name){ var e = document.querySelector('input[name="'+name+'"]:checked'); return e ? e.value : ''; }
+
+function render(){
+  var goal = val('goal'), days = Number(val('days')), exp = val('exp');
+  var s = SPLITS[goal];
+  $('planTitle').textContent = goal;
+  $('planSub').textContent = s.sub + ' ' + days + ' days a week, ' + exp.toLowerCase() + ' level.';
+  var on = PATTERN[days];
+  var wk = $('week'); wk.innerHTML = '';
+  var k = 0;
+  DAYS.forEach(function(d, i){
+    var cell = document.createElement('div');
+    var b = document.createElement('b'); b.textContent = d;
+    var sp = document.createElement('span');
+    if (on.indexOf(i) > -1) { cell.className = 'day on'; sp.textContent = s.sessions[k++]; }
+    else { cell.className = 'day rest'; sp.textContent = 'Rest'; }
+    cell.appendChild(b); cell.appendChild(sp); wk.appendChild(cell);
+  });
+  var ul = $('tips'); ul.innerHTML = '';
+  s.tips.concat(exp === 'Beginner' ? ['Start lighter and learn the movements with a trainer'] : []).forEach(function(t){
+    var li = document.createElement('li'); li.textContent = t; ul.appendChild(li);
+  });
+}
+$('planForm').addEventListener('change', render);
+render();
+
+function go(text){
+  var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+  var box = $('sent');
+  box.innerHTML = 'If WhatsApp did not open: <a target="_blank" rel="noopener">tap here to send</a>';
+  box.querySelector('a').href = url;
+  box.classList.add('show');
+  window.location.href = url;
+}
+
+$('planForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name = $('pName').value.trim();
+  if (!name) { $('pName').focus(); return; }
+  var on = PATTERN[Number(val('days'))], s = SPLITS[val('goal')], k = 0;
+  var week = on.map(function(i){ return DAYS[i] + ': ' + s.sessions[k++]; }).join('\n');
+  go('Hi Ramro Fitness, I am ' + name + '. I would like to start.\nGoal: ' + val('goal') +
+     '\nDays per week: ' + val('days') + '\nExperience: ' + val('exp') + '\nPreferred time: ' + val('time') +
+     '\n\nSample week:\n' + week + '\n\nPlease share membership details.');
+});
+
+document.querySelectorAll('[data-ask]').forEach(function(b){
+  b.addEventListener('click', function(){
+    window.location.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hi Ramro Fitness, do you have ' + b.getAttribute('data-ask') + ' in stock? Please share brands and prices.');
+  });
+});
+$('offerBtn').addEventListener('click', function(e){
+  e.preventDefault();
+  window.location.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hi Ramro Fitness, are there any membership offers running now?');
+});
+
+/* ---- Mobile menu ---- */
+$('menuBtn').addEventListener('click', function(){ $('nav').classList.toggle('open'); });
+document.querySelectorAll('#nav a').forEach(function(a){ a.addEventListener('click', function(){ $('nav').classList.remove('open'); }); });
+</script>
+</body>
+</html>
